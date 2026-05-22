@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Drive Deals KE - Premium Auto Marketplace</title>
+  <meta name="description" content="Drive Deals KE - Buy clean cars at the best prices in Nairobi." />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black min-h-screen text-white font-sans">
+
+  <!-- Floating Button -->
+  <a href="https://wa.me/254702878255" target="_blank"
+     class="fixed bottom-5 right-5 bg-green-500 hover:bg-green-600 px-5 py-4 rounded-full shadow-2xl z-50 font-semibold">
+    WhatsApp Us
+  </a>
+
+  <!-- Navbar -->
+  <nav class="sticky top-0 z-40 bg-black/90 backdrop-blur border-b border-zinc-800 px-6 py-4 flex items-center justify-between">
+    <div>
+      <h1 class="text-2xl font-extrabold tracking-wide">
+        DRIVE DEALS <span class="text-red-500">KE</span>
+      </h1>
+      <p class="text-zinc-500 text-xs">Premium Auto Marketplace</p>
+    </div>
+
+    <div class="hidden md:flex gap-6 text-zinc-300 text-sm">
+      <a href="#home" class="hover:text-red-500">Home</a>
+      <a href="#cars" class="hover:text-red-500">Cars</a>
+      <a href="#featured" class="hover:text-red-500">Featured</a>
+      <a href="#contact" class="hover:text-red-500">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="home" class="relative h-[90vh] flex items-center justify-center text-center px-6"
+    style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1493238792000-8113da705763?q=80&w=1600&auto=format&fit=crop'); background-size: cover; background-position: center;">
+    <div class="max-w-4xl">
+      <div class="inline-block border border-red-500 text-red-400 bg-red-500/10 px-5 py-2 rounded-full mb-5 text-sm">
+        Outer Ring Road • Nairobi
+      </div>
+
+      <h2 class="text-5xl md:text-7xl font-black leading-tight">
+        Buy Clean Cars<br />
+        <span class="text-red-500">At The Best Prices</span>
+      </h2>
+
+      <p class="text-zinc-300 text-lg mt-6 max-w-2xl mx-auto leading-8">
+        Discover affordable sedans, SUVs, vans and commercial vehicles from Drive Deals KE.
+      </p>
+
+      <div class="mt-10 flex flex-col md:flex-row gap-5 justify-center">
+        <a href="#cars" class="bg-red-600 hover:bg-red-700 px-8 py-4 rounded-2xl font-semibold transition">
+          Browse Cars
+        </a>
+        <a href="https://wa.me/254702878255" target="_blank"
+           class="border border-zinc-700 hover:border-red-500 px-8 py-4 rounded-2xl transition">
+          Contact Dealer
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Search Section -->
+  <section class="px-6 md:px-14 py-14 bg-zinc-950 border-y border-zinc-900">
+    <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-6 grid md:grid-cols-4 gap-4">
+      <input id="searchInput" onkeyup="filterCars()" placeholder="Search vehicle"
+        class="bg-black border border-zinc-800 px-4 py-4 rounded-2xl outline-none focus:border-red-500" />
+
+      <select id="categoryFilter" onchange="filterCars()" class="bg-black border border-zinc-800 px-4 py-4 rounded-2xl">
+        <option value="all">All Categories</option>
+        <option value="Sedan">Sedan</option>
+        <option value="Van">Van</option>
+        <option value="SUV">SUV</option>
+        <option value="Commercial">Commercial</option>
+      </select>
+
+      <select class="bg-black border border-zinc-800 px-4 py-4 rounded-2xl">
+        <option>Price Range</option>
+        <option>Under 500K</option>
+        <option>500K - 1M</option>
+        <option>Above 1M</option>
+      </select>
+
+      <button onclick="filterCars()" class="bg-red-600 hover:bg-red-700 rounded-2xl font-semibold transition py-4">
+        Search Cars
+      </button>
+    </div>
+  </section>
+
+  <!-- Featured Cars -->
+  <section id="featured" class="py-20 px-6 md:px-14">
+    <div class="flex justify-between items-center mb-10">
+      <div>
+        <p class="text-red-500 uppercase tracking-[4px] text-sm">Featured</p>
+        <h2 class="text-4xl font-bold mt-2">Hot Deals</h2>
+      </div>
+      <span class="bg-red-600 px-4 py-2 rounded-full text-sm">Updated Daily</span>
+    </div>
+
+    <div id="cars" class="grid md:grid-cols-3 gap-8"></div>
+
+    <p id="noResults" class="hidden text-center text-zinc-400 mt-10">No cars found.</p>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="py-20 px-6 md:px-14 bg-zinc-950">
+    <div class="text-center mb-14">
+      <p class="text-red-500 uppercase tracking-[4px] text-sm">Why Choose Us</p>
+      <h2 class="text-4xl font-bold mt-3">Trusted Car Marketplace</h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-zinc-900 border border-zinc-800 p-8 rounded-3xl">
+        <h3 class="text-2xl font-bold">Verified Cars</h3>
+        <p class="text-zinc-400 mt-4 leading-8">Clean units with transparent pricing and reliable condition.</p>
+      </div>
+      <div class="bg-zinc-900 border border-zinc-800 p-8 rounded-3xl">
+        <h3 class="text-2xl font-bold">Affordable Deals</h3>
+        <p class="text-zinc-400 mt-4 leading-8">Budget-friendly options for families, businesses and daily driving.</p>
+      </div>
+      <div class="bg-zinc-900 border border-zinc-800 p-8 rounded-3xl">
+        <h3 class="text-2xl font-bold">Fast Support</h3>
+        <p class="text-zinc-400 mt-4 leading-8">Contact us instantly through WhatsApp for faster responses.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Media -->
+  <section class="py-20 px-6 md:px-14 text-center">
+    <p class="text-red-500 uppercase tracking-[4px] text-sm">Follow Us</p>
+    <h2 class="text-4xl font-bold mt-3">Drive Deals KE Online</h2>
+
+    <div class="flex flex-col md:flex-row gap-5 justify-center mt-10">
+      <a href="https://www.tiktok.com/@drive.ke" target="_blank"
+         class="bg-zinc-900 border border-zinc-800 px-8 py-4 rounded-2xl hover:border-red-500 transition">
+        TikTok: @drive.ke
+      </a>
+      <a href="https://www.instagram.com/drive_deals.ke" target="_blank"
+         class="bg-zinc-900 border border-zinc-800 px-8 py-4 rounded-2xl hover:border-red-500 transition">
+        Instagram: @drive_deals.ke
+      </a>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="px-6 md:px-14 pb-20">
+    <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-10 text-center shadow-2xl">
+      <p class="text-red-500 uppercase tracking-[4px] text-sm">Contact Us</p>
+      <h2 class="text-4xl font-bold mt-3">Ready To Buy Your Next Car?</h2>
+      <p class="text-zinc-300 mt-5 max-w-2xl mx-auto leading-8">Reach out now and get the best car deals in Nairobi.</p>
+
+      <div class="mt-10 flex flex-col md:flex-row justify-center gap-5">
+        <a href="tel:0702878255" class="bg-white text-black px-8 py-4 rounded-2xl font-semibold hover:bg-red-500 hover:text-white transition">
+          Call: 0702 878 255
+        </a>
+        <a href="https://wa.me/254702878255" target="_blank"
+           class="bg-red-600 hover:bg-red-700 px-8 py-4 rounded-2xl font-semibold transition">
+          WhatsApp Dealer
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-zinc-800 py-8 text-center text-zinc-500 text-sm">
+    © 2026 Drive Deals KE • All Rights Reserved
+  </footer>
+
+  <script>
+    const cars = [
+      {
+        id: 1,
+        name: 'Toyota Axio',
+        year: 2014,
+        engine: '1500cc',
+        price: 'KES 1.29M',
+        category: 'Sedan',
+        image: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?q=80&w=1200&auto=format&fit=crop'
+      },
+      {
+        id: 2,
+        name: 'Toyota Noah',
+        year: 2008,
+        engine: '2000cc',
+        price: 'KES 750K',
+        category: 'Van',
+        image: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1200&auto=format&fit=crop'
+      },
+      {
+        id: 3,
+        name: 'Toyota Probox',
+        year: 2013,
+        engine: '1500cc',
+        price: 'KES 520K',
+        category: 'Commercial',
+        image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200&auto=format&fit=crop'
+      }
+    ];
+
+    function renderCars(list) {
+      const container = document.getElementById('cars');
+      const noResults = document.getElementById('noResults');
+
+      container.innerHTML = '';
+      noResults.classList.toggle('hidden', list.length > 0);
+
+      list.forEach(car => {
+        container.innerHTML += `
+          <div class="car-card bg-zinc-900 border border-zinc-800 hover:border-red-500 rounded-3xl overflow-hidden transition shadow-xl">
+            <img src="${car.image}" alt="${car.name}" class="w-full h-64 object-cover" />
+            <div class="p-6">
+              <div class="flex justify-between items-center">
+                <h3 class="text-2xl font-bold">${car.name}</h3>
+                <span class="bg-red-600 px-3 py-1 rounded-full text-xs">Quick Sale</span>
+              </div>
+              <div class="mt-5 text-zinc-300 space-y-2">
+                <p>Year: ${car.year}</p>
+                <p>Engine: ${car.engine}</p>
+                <p>Category: ${car.category}</p>
+              </div>
+              <div class="mt-6 flex justify-between items-center">
+                <p class="text-2xl font-black text-red-500">${car.price}</p>
+                <a href="https://wa.me/254702878255?text=I'm interested in ${encodeURIComponent(car.name)}" target="_blank"
+                   class="bg-white text-black px-5 py-3 rounded-xl font-semibold hover:bg-red-500 hover:text-white transition">
+                  Inquire
+                </a>
+              </div>
+            </div>
+          </div>
+        `;
+      });
+    }
+
+    function filterCars() {
+      const search = document.getElementById('searchInput').value.toLowerCase();
+      const category = document.getElementById('categoryFilter').value;
+
+      const filtered = cars.filter(car => {
+        const matchesSearch = car.name.toLowerCase().includes(search) || car.engine.toLowerCase().includes(search) || car.price.toLowerCase().includes(search);
+        const matchesCategory = category === 'all' || car.category === category;
+        return matchesSearch && matchesCategory;
+      });
+
+      renderCars(filtered);
+    }
+
+    renderCars(cars);
+  </script>
+</body>
+</html>
